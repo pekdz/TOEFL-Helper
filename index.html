@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>TOEFL Helper</title>
+    <link rel="short icon" type="image/x-icon" href="img/toefl.png" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flipclock.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Audio Player -->
+        <div class="col-md-7">
+            <!-- Audio -->
+            <div id="audio-player-wrapper">
+                <audio id="audio-player" controls ></audio>
+                <div id="diy-player">
+                    <div id="play-btn-wrapper">
+                        <div id="play-btn" class="play">
+                            <div id="play-btn-triangle"></div>
+                            <div id="play-btn-pause">
+                                <div class="part-1"></div>
+                                <div class="part-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-center-wrapper">
+                        <div id="player-center">
+                            <div class="row" id="audio-name-volume">
+                                <div id="audio-name-wrapper">
+                                    <div id="audio-name">Local Audio Player</div>
+                                </div>
+                                <div id="play-speed-wrapper">
+                                    <div id="play-speed">Speed: 1.0</div>
+                                </div>
+                                <div id="loop-mode-wrapper">
+                                    <div id="loop-single">1</div>
+                                </div>
+                                <div id="audio-volume-wrapper">
+                                    <div id="icon-volume-low">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                    </div>
+                                    <div><input type="range" id="audio-volume" value="80" max="100"/></div>
+                                    <div id="icon-volume-high">
+                                        <div class="part-1"></div>
+                                        <div class="part-2"></div>
+                                        <div class="part-3"></div>
+                                        <div class="part-4"></div>
+                                        <div class="part-5"></div>
+                                        <div class="part-6"></div>
+                                        <div class="part-7"></div>
+                                        <div class="part-8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="audio-timeline">
+                                <div id="audio-time-current">00:00</div>
+                                <div id="audio-process-wrapper">
+                                    <input type="range" id="audio-process" value="0" max="100" />
+                                </div>
+                                <div id="audio-time-total">-00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="switch-btn-wrapper">
+                        <div id="prev-btn">
+                            <div id="prev-btn-triangle"></div>
+                        </div>
+                        <div id="next-btn">
+                            <div id="next-btn-triangle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display audio list -->
+            <div id="audio-list-wrapper">
+                <div id="audio-list">
+                    {{#lst}}
+                    <a href="###" data-aid="{{id}}" style="
+                    background-color: rgb({{bg}});
+                    color: rgb({{clr}});
+                ">{{name}}</a>
+                    {{/lst}}
+                </div>
+            </div>
+
+            <!-- Listen to Audio Dragover -->
+            <div id="drop-place">
+                Drag mp3<br/>to here
+            </div>
+
+            <!-- Help Doc -->
+            <div id="pop-win-wrapper">
+                <table class="mask">
+                    <tr>
+                        <td>
+                            <div class="pop-win">
+                                <div class="close-btn">X</div>
+                                <div class="win-content">
+                                    <table class="shortcuts">
+                                        <tr>
+                                            <th>快捷键</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        <tr>
+                                            <td>空格、P</td>
+                                            <td>播放、暂停</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A、S</td>
+                                            <td>开始、停止录制</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1、2</td>
+                                            <td>录制45、60秒</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>单曲循环</td>
+                                        </tr>
+                                        <tr>
+                                            <td>↑、↓</td>
+                                            <td>上一首、下一首</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lt;、&gt;</td>
+                                            <td>后退、快进5秒</td>
+                                        </tr>
+                                        <tr>
+                                            <td>[、]</td>
+                                            <td>后退、快进30秒</td>
+                                        </tr>
+                                        <tr>
+                                            <td>←、→</td>
+                                            <td>音量減、加5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Z、X</td>
+                                            <td>倍速減、增0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td>静音</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R</td>
+                                            <td>重新选取文件</td>
+                                        </tr>
+                                        <tr>
+                                            <td>?</td>
+                                            <td>帮助开关</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recorder -->
+        <div class="col-md-5">
+            <!-- FlipClock -->
+            <div class="clock-wrapper">
+                <div class="clock"></div>
+            </div>
+            <!-- Record tools -->
+            <div class="text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading action-list">
+                        <p>
+                            <button type="button" class="btn btn-success start" onclick="startRecording();">
+                                <i class="icon-record"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger stop" onclick="stopRecording();" disabled>
+                                <i class="icon-stop2"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning reset" onclick="resetRecording();">
+                                <i class="icon-bin"></i>
+                            </button>
+                        </p>
+                        <p style="margin-top: 10px">
+                            <button type="button" class="btn btn-info" onclick="recordSecond(45);">Record 45s</button>
+                            <button type="button" class="btn btn-info" onclick="recordSecond(60);">Record 60s</button>
+                        </p>
+
+                    </div>
+
+                </div>
+                    <div class="panel-body">
+                        <ul id="recordingsList"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="my-footer">TOEFL Helper by Zhao Dong</footer>
+</div>
+    
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/recorder.js"></script>
+<script type="text/javascript" src="js/flipclock.min.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/record.js"></script>
