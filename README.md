@@ -2,6 +2,7 @@ TOEFL HELPER
 =====================
 
 * A local html5 audio player & recorder can help you practice English listening and speaking.
+* ![DEMO](https://pekdz.github.io/TOEFL-Helper/)
 * Revised from [localHtml5AudioPlayer](https://github.com/599316527/localHtml5AudioPlayer)
 
 ## Notice
