@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/flipclock.css"/>
     <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
-    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
@@ -34,7 +33,7 @@
                         <div id="player-center">
                             <div class="row" id="audio-name-volume">
                                 <div id="audio-name-wrapper">
-                                    <div id="audio-name">Local Audio Player</div>
+                                    <div id="audio-name" title="Local Audio Player">Local Audio Player</div>
                                 </div>
                                 <div id="play-speed-wrapper">
                                     <div id="play-speed">Speed: 1.0</div>
@@ -97,6 +96,7 @@
                 Drag mp3<br/>to here
             </div>
 
+            <div class="hide-divide"></div>
             <!-- Help Doc -->
             <div id="pop-win-wrapper">
                 <table class="mask">
@@ -167,6 +167,8 @@
             </div>
         </div>
 
+
+
         <!-- Recorder -->
         <div class="col-md-5">
             <!-- FlipClock -->
@@ -175,7 +177,7 @@
             </div>
             <!-- Record tools -->
             <div class="text-center">
-                <div class="panel panel-default">
+                <div class="panel panel-default" style="margin: 10px 20px;">
                     <div class="panel-heading action-list">
                         <p>
                             <button type="button" class="btn btn-success start" onclick="startRecording();">
@@ -216,6 +218,4 @@
 <script type="text/javascript" src="js/recorder.js"></script>
 <script type="text/javascript" src="js/flipclock.min.js"></script>
 <script type="text/javascript" src="js/player.js"></script>
-<script type="text/javascript" src="js/list.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/record.js"></script>

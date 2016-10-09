@@ -1,20 +1,49 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img {
+    border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style:normal;
+    font-weight:normal;
+}
+ol,ul {
+    list-style:none;
+}
+caption,th {
+    text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym {
+    border:0;
+}
+
 body {
     min-height: 100%;
     font-size: 18px;
 }
 
 #audio-player-wrapper {
-    /*position: fixed;*/
-    /*top: 20px;*/
-    /*left: 0;*/
     z-index: 5;
-    width: 90%;
+    width: 100%;
     margin: 15px 5px 0 5px;
     height: 80px;
     background: -webkit-linear-gradient(top, rgba(255,255,255,.8) 64%, rgba(255,255,255,0) 100%);
 }
 #audio-list-wrapper {
-    padding-top: 95px;
+    padding-top: 20px;
     /*padding-bottom: 46px;*/
 }
 #copyright-wrapper {
@@ -31,19 +60,11 @@ body {
     padding-top: 20px;
     font-size: 12px;
 }
-/*#drop-place-wrapper {*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*z-index: 80;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*background-color: rgba(255,255,255,.8);*/
-/*}*/
+
 #drop-place {
-    width: 80%;
-    padding: 80px;
-    margin: 0 30px 30px;
+    width: 100%;
+    padding: 116px 80px;
+    /*margin: 0 30px 30px;*/
     border: 5px dashed #999;
     border-radius: 20px;
     background-color: white;
@@ -170,12 +191,17 @@ body {
 #audio-name-wrapper {
     padding-right: 200px;
     height: 100%;
+    width: 85%;
     line-height: 20px;
     overflow: hidden;
 }
 #audio-name {
     font-size: 18px;
     padding-left: 10px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow: hidden;
     color: black;
 }
 #audio-volume-wrapper {
@@ -404,7 +430,7 @@ body {
 #audio-list a {
     padding: .5em 10px;
     float: left;
-    width: 95%;
+    width: 100%;
     text-decoration: none;
     border-bottom: 1px dashed;
     background-color: #ffffff;
@@ -523,3 +549,8 @@ body {
     font-size: .8rem;
 }
 
+.hide-divide {
+    width: 500px;
+    padding: 10px;
+    visibility: hidden;
+}

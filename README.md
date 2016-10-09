@@ -5,6 +5,13 @@ TOEFL HELPER
 * [DEMO](https://pekdz.github.io/TOEFL-Helper/)
 * Revised from [localHtml5AudioPlayer](https://github.com/599316527/localHtml5AudioPlayer)
 
+## Features
+
+* Audio speed control.
+* Record 45 or 60s.
+* Download records.
+* Easy-to-use shortcut keys.
+
 ## Notice
 
 * This web APP only works properly in Chrome.
